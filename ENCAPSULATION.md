@@ -27,13 +27,40 @@ To write a Python program to create a class `Student` with the private members `
 
 ```
 
+class Student:
+    def __init__(self, name, age):
+        self.__name = name
+        self.__age = age
 
+    # Getter for age
+    @property
+    def age(self):
+        return self.__age
 
+    # Setter for age
+    @age.setter
+    def age(self, age):
+        if age > 0 and isinstance(age, int):
+            self.__age = age
+        else:
+            print("Please enter a valid age")
+
+    # Method to print student details
+    def print_details(self):
+        return f"Name: {self.__name} {self.__age}"
+
+# Create an instance
+s = Student(" Jessa Salary:", 10000)
+print(s.print_details())
+# Change age using setter
+s.age = 10000
+print(s.print_details())
 ```
 
 ### OUTPUT
+<img width="1189" height="211" alt="438280734-c8694416-d90b-4d7f-9f8e-d2a1c49c3066" src="https://github.com/user-attachments/assets/4c5e2506-30f0-43db-93ca-7c06e525b101" />
 
 
 ### RESULT
 
-
+The program successfully creates an Employee class and uses a public method show() to display the details of the employee.
